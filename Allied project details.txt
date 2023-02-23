@@ -1,0 +1,7 @@
+http://168.61.189.83/
+umesh.pandey@softwebsolutions.com
+Hello@#1234
+
+- First create Facility before add Allied admin
+- First create Film , Machine, and Recipe details before add Facility Off time
+
