@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-02-20T15:19:07 IST" name="Allied" finished-at="2023-02-20T15:19:54 IST" duration-ms="47330">
+    <groups>
+    </groups>
+    <test started-at="2023-02-20T15:19:07 IST" name="FirefoxTest" finished-at="2023-02-20T15:19:42 IST" duration-ms="34948">
+      <class name="Login_Testcase.LoginTest">
+        <test-method is-config="true" signature="Setup(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:Login_Testcase.LoginTest@2beee7ff]" started-at="2023-02-20T15:19:07 IST" name="Setup" finished-at="2023-02-20T15:19:14 IST" duration-ms="7296" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[C:\Program Files\geckodriver.exe]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[http://168.61.189.83/#/login]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Setup -->
+        <test-method signature="VerifyLogin()[pri:0, instance:Login_Testcase.LoginTest@2beee7ff]" started-at="2023-02-20T15:19:14 IST" name="VerifyLogin" finished-at="2023-02-20T15:19:19 IST" duration-ms="4421" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyLogin -->
+        <test-method is-config="true" signature="Terminate()[pri:0, instance:Login_Testcase.LoginTest@2beee7ff]" started-at="2023-02-20T15:19:19 IST" name="Terminate" finished-at="2023-02-20T15:19:19 IST" duration-ms="500" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Terminate -->
+      </class> <!-- Login_Testcase.LoginTest -->
+      <class name="UserProfile_Testcase.UserProfileTest">
+        <test-method is-config="true" signature="Setup(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:UserProfile_Testcase.UserProfileTest@5136d012]" started-at="2023-02-20T15:19:19 IST" name="Setup" finished-at="2023-02-20T15:19:26 IST" duration-ms="6833" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[C:\Program Files\geckodriver.exe]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[http://168.61.189.83/#/login]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Setup -->
+        <test-method signature="verifyUserProfile()[pri:0, instance:UserProfile_Testcase.UserProfileTest@5136d012]" started-at="2023-02-20T15:19:26 IST" name="verifyUserProfile" finished-at="2023-02-20T15:19:41 IST" duration-ms="15226" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyUserProfile -->
+        <test-method is-config="true" signature="Terminate()[pri:0, instance:UserProfile_Testcase.UserProfileTest@5136d012]" started-at="2023-02-20T15:19:41 IST" name="Terminate" finished-at="2023-02-20T15:19:42 IST" duration-ms="654" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Terminate -->
+      </class> <!-- UserProfile_Testcase.UserProfileTest -->
+    </test> <!-- FirefoxTest -->
+    <test started-at="2023-02-20T15:19:07 IST" name="ChromeTest" finished-at="2023-02-20T15:19:54 IST" duration-ms="47330">
+      <class name="Login_Testcase.LoginTest">
+        <test-method is-config="true" signature="Setup(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:Login_Testcase.LoginTest@55740540]" started-at="2023-02-20T15:19:07 IST" name="Setup" finished-at="2023-02-20T15:19:12 IST" duration-ms="5281" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[C:\Program Files\chromedriver.exe]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[http://168.61.189.83/#/login]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Setup -->
+        <test-method signature="VerifyLogin()[pri:0, instance:Login_Testcase.LoginTest@55740540]" started-at="2023-02-20T15:19:12 IST" name="VerifyLogin" finished-at="2023-02-20T15:19:18 IST" duration-ms="5906" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyLogin -->
+        <test-method is-config="true" signature="Terminate()[pri:0, instance:Login_Testcase.LoginTest@55740540]" started-at="2023-02-20T15:19:18 IST" name="Terminate" finished-at="2023-02-20T15:19:34 IST" duration-ms="16204" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Terminate -->
+      </class> <!-- Login_Testcase.LoginTest -->
+      <class name="UserProfile_Testcase.UserProfileTest">
+        <test-method is-config="true" signature="Setup(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:UserProfile_Testcase.UserProfileTest@5ab9e72c]" started-at="2023-02-20T15:19:34 IST" name="Setup" finished-at="2023-02-20T15:19:39 IST" duration-ms="4518" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[C:\Program Files\chromedriver.exe]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[http://168.61.189.83/#/login]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Setup -->
+        <test-method signature="verifyUserProfile()[pri:0, instance:UserProfile_Testcase.UserProfileTest@5ab9e72c]" started-at="2023-02-20T15:19:39 IST" name="verifyUserProfile" finished-at="2023-02-20T15:19:54 IST" duration-ms="15347" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyUserProfile -->
+        <test-method is-config="true" signature="Terminate()[pri:0, instance:UserProfile_Testcase.UserProfileTest@5ab9e72c]" started-at="2023-02-20T15:19:54 IST" name="Terminate" finished-at="2023-02-20T15:19:54 IST" duration-ms="49" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Terminate -->
+      </class> <!-- UserProfile_Testcase.UserProfileTest -->
+    </test> <!-- ChromeTest -->
+  </suite> <!-- Allied -->
+</testng-results>

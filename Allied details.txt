@@ -1,0 +1,26 @@
+http://168.61.189.83/#/login
+allied.packagingqa@mailinator.com
+Softweb#123
+
+Prod URL: https://prod-webapp-frontendui-cu.azurewebsites.net/#/
+hiten.saresa+02@gmail.com
+Softweb#123
+
+organization_one@mailinator.com 
+Softweb@1234
+
+umesh.pandey@softwebsolutions.com
+Hello@#1234
+
+https://qa.iotconnect.io/
+
+from IOT portal > Entity / User / Devices
+
+admin \ dcd0acc9600f457ebb21a5f1393db15d
+
+
+Github URL: https://github.com/pandug1307/GitJenkinsIntegration.git
+Git weburl: https://github.com/pandug1307/GitJenkinsIntegration
+git.exe path - C:\Program Files\Git\bin\git.exe
+
+Git Repository name - GitJenkinsIntegration

@@ -1,0 +1,5 @@
+Logout_PageObject\LogoutPage.class
+CommonPage\BasePage.class
+CommonPage\BaseTest.class
+Login_PageObject\LoginPage.class
+UserProfile_PageObject\ProfilePage.class
