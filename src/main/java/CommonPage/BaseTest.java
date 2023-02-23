@@ -35,6 +35,7 @@ public class BaseTest {
     @AfterClass
     public void Terminate(){
         driver.close();
-        System.out.println("Browser closed successfully.");
+        //System.out.println("Browser closed successfully.");
+        System.out.println("=======================Browser closed successfully.=============================");
     }
 }
