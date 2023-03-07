@@ -2,6 +2,8 @@ package Login_PageObject;
 
 import CommonPage.BasePage;
 import CommonPage.BaseTest;
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,6 +14,8 @@ import org.testng.annotations.AfterTest;
 
 public class LoginPage extends BasePage {
     public LoginPage(WebDriver driver){super(driver);}
+    public ExtentReports extentReports;
+    public ExtentTest extentTest;
 
     //Locators
     public By Msg= By.xpath("//body//app-root//h2[1]");
@@ -63,10 +67,12 @@ public class LoginPage extends BasePage {
             WebElement failureMsg= driver.findElement(By.xpath("//div[@role='alertdialog']"));
             if (failureMsg.isDisplayed() == true) {
                 System.out.println(failureMsg.getText());
+                extentTest.info("Unknown error");
 
         }else {
                 WebElement successMsg= driver.findElement(By.xpath("//div[@class='ng-tns-c8-2 ng-star-inserted ng-trigger ng-trigger-flyInOut ngx-toastr toast-success']"));
-            System.out.println(successMsg.getText());
+                System.out.println(successMsg.getText());
+                extentTest.info("Login successfully");
         }
 
         return true;
