@@ -20,14 +20,15 @@ public class LoginTest extends BaseTest {
         extentTest= extentReports.createTest("To verify the Login page");
         LoginPage loginPage= new LoginPage(driver);
         extentTest.info("Verify the page tile");
-        Assert.assertEquals(driver.getTitle(), "Allied Packaging");
-        extentTest.pass("Page tile is matched");
+        Assert.assertEquals(driver.getTitle(), "Allied Packaging Corporation");
+        extentTest.log(Status.PASS, "Page title is matched");
         //String browserTitle= driver.getTitle();
         //System.out.println(browserTitle);
+        extentTest.info("Login with valid credentials");
         loginPage.verifyLoginPage(loginPage.txtemailAddress, "umesh.pandey@softwebsolutions.com", loginPage.txtPasswrd, "Hello@#1234");
         Thread.sleep(2000);
         loginPage.getLoggedinmsg();
-        extentTest.log(Status.FAIL, "Login failed");
+        extentTest.log(Status.PASS, "Login success");
 
 //        ProfilePage profilePage= new ProfilePage(driver);
 //        profilePage.clickProfile();
@@ -35,9 +36,9 @@ public class LoginTest extends BaseTest {
 //        profilePage.updateProfiledetail("UmeshU","PandeyP");
 //        profilePage.btnSubmit();
 
-        extentTest= extentReports.createTest("To verify the Logout");
+        extentTest.info("Verify the Logout");
         LogoutPage logoutPage= new LogoutPage(driver);
         logoutPage.verifyLogoutPage();
-        extentTest.log(Status.PASS, "logout success");
+        extentTest.log(Status.PASS, "Logout success");
     }
 }

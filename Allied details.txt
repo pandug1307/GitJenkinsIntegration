@@ -18,9 +18,26 @@ from IOT portal > Entity / User / Devices
 
 admin \ dcd0acc9600f457ebb21a5f1393db15d
 
+- First create Facility before add Allied admin
+- First create Film , Machine, and Recipe details before add Facility Off time
 
 Github URL: https://github.com/pandug1307/GitJenkinsIntegration.git
 Git weburl: https://github.com/pandug1307/GitJenkinsIntegration
 git.exe path - C:\Program Files\Git\bin\git.exe
 
 Git Repository name - GitJenkinsIntegration
+
+https://www.swtestacademy.com/extent-reports-in-selenium-with-testng/
+https://www.browserstack.com/guide/extent-reports-in-selenium
+
+
+Bugs list:
+1. In Machine dashborad rom RealTime Data page , sometime "Back" button not clickable  = done - QA done
+2. Sorting fail by Facility Name & Film Reference Number in Recipe : (https://prnt.sc/ECcOfLCAkCHr) = done - QA fail
+3. spelling mistake in success msg while update password - done - QA fail - Do not come any message when try to update the password
+4. Alert should be displayed with red color when user select any tab like Rules and no records are available. (done - spacing seems proper)
+5. Space around error msg - done
+6. After sorting from header, existing record is getting hide (Film Module) - done
+7. phone number is not getting saved  - done
+8. Validation do not comes for email address when enter in invalid format In Add User - done
+9. the pages when horizontal scrolling enable and user scrolling that - done
