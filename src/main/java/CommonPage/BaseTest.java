@@ -67,8 +67,8 @@ public class BaseTest {
     @AfterMethod
     public void getResult(ITestResult result) throws IOException{
         if(result.getStatus() == ITestResult.FAILURE){
-            //extentTest.log(Status.FAIL, MarkupHelper.createLabel(result.getName() + " - Test Case Failed", ExtentColor.RED));
-            extentTest.log(Status.FAIL, MarkupHelper.createLabel(result.getThrowable() + " Test Case Failed", ExtentColor.RED));
+            extentTest.log(Status.FAIL, MarkupHelper.createLabel(result.getName() + " - Test Case Failed", ExtentColor.RED));
+//            extentTest.log(Status.FAIL, MarkupHelper.createLabel(result.getThrowable() + " Test Case Failed", ExtentColor.RED));
             String screenshotPath = getSreencapture(driver, result.getName());
             extentTest.fail("Test Case Failed" + extentTest.addScreenCaptureFromPath(screenshotPath));
         }
