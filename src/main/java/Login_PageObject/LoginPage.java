@@ -4,11 +4,13 @@ import CommonPage.BasePage;
 import CommonPage.BaseTest;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
 
@@ -67,13 +69,14 @@ public class LoginPage extends BasePage {
             WebElement failureMsg= driver.findElement(By.xpath("//div[@role='alertdialog']"));
             if (failureMsg.isDisplayed() == true) {
                 System.out.println(failureMsg.getText());
-                extentTest.info("Unknown error");
+                extentTest.log(Status.FAIL, "Login failed");
 
         }else {
                 WebElement successMsg= driver.findElement(By.xpath("//div[@class='ng-tns-c8-2 ng-star-inserted ng-trigger ng-trigger-flyInOut ngx-toastr toast-success']"));
                 System.out.println(successMsg.getText());
-                extentTest.info("Login successfully");
-        }
+                extentTest.log(Status.PASS, "Login success");
+
+            }
 
         return true;
 
@@ -82,4 +85,6 @@ public class LoginPage extends BasePage {
 
         }
     }
+
+
 }

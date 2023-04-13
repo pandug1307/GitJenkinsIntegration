@@ -1,12 +1,15 @@
 package UserProfile_PageObject;
 
 import CommonPage.BasePage;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import sun.tools.tree.NewArrayExpression;
+
+import javax.lang.model.element.Element;
+import javax.swing.*;
+import java.util.List;
 
 public class ProfilePage extends BasePage {
     public ProfilePage(WebDriver driver){super(driver);}
@@ -15,8 +18,15 @@ public class ProfilePage extends BasePage {
 
     public By Menudropdown= By.xpath("//span[@class='hidden-xs']");
     public By Profile= By.xpath("//a[@routerlink='/user-profile']");
+    public By Progressbar= By.xpath("//*[contains(@role,'progressbar')]");
     public By txtboxfname= By.xpath("//input[@formcontrolname='firstName']");
     public By txtboxlname= By.xpath("//input[@formcontrolname='lastName']");
+    public By txtboxphone= By.xpath("//input[@formcontrolname='phoneNo']");
+
+    public By companydropdown= By.xpath("//*[contains(@placeholder, 'Please Select Companies')]");
+    public By companyList= By.xpath("//div[contains(@role, 'listbox')]");
+    public By companyName= By.xpath("//span[contains(text(),'Organization_1')]");
+
     //public By btnSave= By.xpath("//span[@class='mat-button-wrapper' and text()='SAVE']");
 
     //Locators method
@@ -31,6 +41,10 @@ public class ProfilePage extends BasePage {
             WebElement profile= (new WebDriverWait(driver, 20))
                     .until(ExpectedConditions.presenceOfElementLocated(Profile));
             profile.click();
+
+            Thread.sleep(4000);
+//            WebDriverWait wait = new WebDriverWait(driver, 30);
+//            wait.until(ExpectedConditions.invisibilityOfElementLocated(Progressbar));
 
             return true;
 
@@ -54,6 +68,34 @@ public class ProfilePage extends BasePage {
 
             return true;
 
+        }catch (Exception e){
+            return false;
+        }
+    }
+
+    public boolean updateCompanydetail() throws InterruptedException {
+        try{
+
+            WebElement cmpnyDrpdwn= (new WebDriverWait(driver, 10))
+                    .until(ExpectedConditions.presenceOfElementLocated(companydropdown));
+            cmpnyDrpdwn.click();
+
+            List<WebElement> list= driver.findElements(companyList);
+            for (WebElement element:list){
+                System.out.println("List of company:\n" +element.getText());
+                WebElement element1= (new WebDriverWait(driver,10))
+                        .until(ExpectedConditions.visibilityOfElementLocated(companyName));
+                element1.click();
+                Thread.sleep(2000);
+
+                WebElement phonetxtbxfield= new WebDriverWait(driver, 10)
+                        .until(ExpectedConditions.presenceOfElementLocated(txtboxphone));
+
+                Actions action= new Actions(driver);
+               action.sendKeys(phonetxtbxfield, "1234567890").build().perform();
+            }
+
+            return true;
         }catch (Exception e){
             return false;
         }

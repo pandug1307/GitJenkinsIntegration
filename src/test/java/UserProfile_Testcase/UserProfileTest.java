@@ -17,7 +17,7 @@ public class UserProfileTest extends BaseTest {
     public void verifyUserProfile() throws InterruptedException{
 
         LoginPage loginPage= new LoginPage(driver);
-        loginPage.verifyLoginPage(loginPage.txtemailAddress, "umesh.pandey@softwebsolutions.com", loginPage.txtPasswrd, "Hello@#1234");
+        loginPage.verifyLoginPage(loginPage.txtemailAddress, "umesh.pandey@softwebsolutions.com", loginPage.txtPasswrd, "Hello@#123");
         loginPage.getLoggedinmsg();
         Thread.sleep(8000);
         extentTest= extentReports.createTest("To verify the User Profile");
@@ -26,6 +26,8 @@ public class UserProfileTest extends BaseTest {
         profilePage.clickProfile();
         profilePage.updateProfiledetail("UmeshU", "PandeyP");
         extentTest.info("Update user profile detail");
+        profilePage.updateCompanydetail();
+        extentTest.info("Update company profile detail");
         profilePage.btnSubmit();
         extentTest.log(Status.PASS, "User profile success");
         Thread.sleep(2000);
