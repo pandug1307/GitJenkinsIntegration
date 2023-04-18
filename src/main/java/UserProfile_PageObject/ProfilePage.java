@@ -6,6 +6,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import sun.jvm.hotspot.utilities.Assert;
 
 import javax.lang.model.element.Element;
 import javax.swing.*;
@@ -26,6 +27,7 @@ public class ProfilePage extends BasePage {
     public By companydropdown= By.xpath("//*[contains(@placeholder, 'Please Select Companies')]");
     public By companyList= By.xpath("//div[contains(@role, 'listbox')]");
     public By companyName= By.xpath("//span[contains(text(),'Organization_1')]");
+    //public By test= By.xpath("//mat-form-field[@class='mat-form-field ng-tns-c49-40 mat-primary mat-form-field-type-mat-select mat-form-field-appearance-legacy mat-form-field-can-float mat-form-field-has-label mat-form-field-hide-placeholder ng-pristine ng-star-inserted ng-valid ng-touched']");
 
     //public By btnSave= By.xpath("//span[@class='mat-button-wrapper' and text()='SAVE']");
 
@@ -80,24 +82,71 @@ public class ProfilePage extends BasePage {
                     .until(ExpectedConditions.presenceOfElementLocated(companydropdown));
             cmpnyDrpdwn.click();
 
+            WebElement name= driver.findElement(companyName);
+
             List<WebElement> list= driver.findElements(companyList);
-            for (WebElement element:list){
-                System.out.println("List of company:\n" +element.getText());
-                WebElement element1= (new WebDriverWait(driver,10))
-                        .until(ExpectedConditions.visibilityOfElementLocated(companyName));
-                element1.click();
-                Thread.sleep(2000);
+            if (name.getText().contains("Organization_1")) {
+                System.out.println("company list is displayed");
 
-                WebElement phonetxtbxfield= new WebDriverWait(driver, 10)
-                        .until(ExpectedConditions.presenceOfElementLocated(txtboxphone));
+                for (WebElement element : list) {
 
-                Actions action= new Actions(driver);
-               action.sendKeys(phonetxtbxfield, "1234567890").build().perform();
+                    System.out.println("List of company:\n" + element.getText());
+
+                    WebElement element1 = (new WebDriverWait(driver, 10))
+                            .until(ExpectedConditions.visibilityOfElementLocated(companyName));
+                    element1.click();
+                    Thread.sleep(20);
+
+                    WebElement phonetxtbxfield = new WebDriverWait(driver, 10)
+                            .until(ExpectedConditions.presenceOfElementLocated(txtboxphone));
+
+                    Actions action = new Actions(driver);
+                    action.sendKeys(phonetxtbxfield, "1234567890").build().perform();
+                    String value = driver.findElement(companyName).getText();
+
+                    System.out.println(value + "\t" + "- company is selected");
+                }
+            }else {
+                System.out.println("Company list do not display");
             }
+//            for (WebElement element:list){
+//
+//                    System.out.println("List of company:\n" + element.getText());
+//
+//                    WebElement element1 = (new WebDriverWait(driver, 10))
+//                            .until(ExpectedConditions.visibilityOfElementLocated(companyName));
+//                    element1.click();
+//                    Thread.sleep(20);
+//
+//                    WebElement phonetxtbxfield = new WebDriverWait(driver, 10)
+//                            .until(ExpectedConditions.presenceOfElementLocated(txtboxphone));
+//
+//                    Actions action = new Actions(driver);
+//                    action.sendKeys(phonetxtbxfield, "1234567890").build().perform();
+//                    String value= driver.findElement(companyName).getText();
+//
+//                    System.out.println(value + "\t" + "- company is selected");
+                //}
+//                    System.out.println("List of company:\n" + element.getText());
+//
+//                    WebElement element1 = (new WebDriverWait(driver, 10))
+//                            .until(ExpectedConditions.visibilityOfElementLocated(companyName));
+//                    element1.click();
+//                    Thread.sleep(3000);
+//
+//                    WebElement phonetxtbxfield = new WebDriverWait(driver, 10)
+//                            .until(ExpectedConditions.presenceOfElementLocated(txtboxphone));
+//
+//                    Actions action = new Actions(driver);
+//                    action.sendKeys(phonetxtbxfield, "1234567890").build().perform();
+//                }else {
+//                System.out.println("Company list do not found");
+//            }
+            //}
 
-            return true;
-        }catch (Exception e){
             return false;
+        }catch (Exception e){
+            return true;
         }
     }
 

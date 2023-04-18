@@ -69,12 +69,10 @@ public class LoginPage extends BasePage {
             WebElement failureMsg= driver.findElement(By.xpath("//div[@role='alertdialog']"));
             if (failureMsg.isDisplayed() == true) {
                 System.out.println(failureMsg.getText());
-                extentTest.log(Status.FAIL, "Login failed");
 
         }else {
                 WebElement successMsg= driver.findElement(By.xpath("//div[@class='ng-tns-c8-2 ng-star-inserted ng-trigger ng-trigger-flyInOut ngx-toastr toast-success']"));
                 System.out.println(successMsg.getText());
-                extentTest.log(Status.PASS, "Login success");
 
             }
 

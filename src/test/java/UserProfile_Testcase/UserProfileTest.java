@@ -1,6 +1,7 @@
 package UserProfile_Testcase;
 
 import CommonPage.BaseTest;
+import Dashboard_PageObject.DashboardPage;
 import Login_PageObject.LoginPage;
 import Logout_PageObject.LogoutPage;
 import UserProfile_PageObject.ProfilePage;
@@ -9,17 +10,25 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
+
 public class UserProfileTest extends BaseTest {
     public UserProfileTest(){}
     public UserProfileTest(WebDriver passdriver){driver=passdriver;}
 
     @Test
-    public void verifyUserProfile() throws InterruptedException{
+    public void verifyUserProfile() throws InterruptedException, IOException {
 
         LoginPage loginPage= new LoginPage(driver);
         loginPage.verifyLoginPage(loginPage.txtemailAddress, "umesh.pandey@softwebsolutions.com", loginPage.txtPasswrd, "Hello@#123");
         loginPage.getLoggedinmsg();
         Thread.sleep(8000);
+
+        extentTest= extentReports.createTest("Verify the Dashboard page");
+        DashboardPage dashboardPage= new DashboardPage(driver);
+        dashboardPage.verifyDashboardPage();
+        extentTest.log(Status.PASS, "Dashboard page is displayed");
+
         extentTest= extentReports.createTest("To verify the User Profile");
         ProfilePage profilePage= new ProfilePage(driver);
         extentTest.info("Select User Profile option");

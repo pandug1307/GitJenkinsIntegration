@@ -7,6 +7,8 @@ import Logout_PageObject.LogoutPage;
 import UserProfile_PageObject.ProfilePage;
 import com.aventstack.extentreports.Status;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.safari.SafariDriver;
 import org.testng.Assert;
 import org.testng.IDynamicGraph;
 import org.testng.annotations.Test;
