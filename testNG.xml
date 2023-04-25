@@ -6,8 +6,8 @@
         <parameter name="localDriverpath" value="C:\Program Files\chromedriver.exe"/>
 
         <classes>
-            <!--<class name="Login_Testcase.LoginTest"/>-->
-            <class name="UserProfile_Testcase.UserProfileTest"/>
+            <class name="Login_Testcase.LoginTest"/>
+            <!--<class name="UserProfile_Testcase.UserProfileTest"/>-->
         </classes>
     </test>
 

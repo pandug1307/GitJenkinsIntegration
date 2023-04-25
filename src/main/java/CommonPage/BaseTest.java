@@ -55,7 +55,7 @@ public class BaseTest {
 
         this.driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         this.driver.manage().window().maximize();
-        driver.navigate().to(url);
+        driver.get(url);
     }
 
     @AfterClass
@@ -80,8 +80,7 @@ public class BaseTest {
             extentTest.log(Status.PASS, MarkupHelper.createLabel(result.getName()+" Test Case PASSED", ExtentColor.GREEN));
         }
         extentReports.flush();
-        Desktop.getDesktop().browse(new File("Report.html").toURI());
-        driver.quit();
+        //Desktop.getDesktop().browse(new File("Report.html").toURI());
     }
 
     public static String getSreencapture(WebDriver driver, String screenShort) throws IOException {

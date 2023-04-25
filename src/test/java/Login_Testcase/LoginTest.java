@@ -6,21 +6,27 @@ import Login_PageObject.LoginPage;
 import Logout_PageObject.LogoutPage;
 import UserProfile_PageObject.ProfilePage;
 import com.aventstack.extentreports.Status;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.safari.SafariDriver;
 import org.testng.Assert;
 import org.testng.IDynamicGraph;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Set;
 
 public class LoginTest extends BaseTest {
     public LoginTest(){}
     public LoginTest(WebDriver passdriver){ driver=passdriver;}
 
     @Test
-    public void VerifyLogin() throws InterruptedException, IOException {
+    public void VerifyLogin() throws InterruptedException, IOException, IndexOutOfBoundsException {
 
         extentTest= extentReports.createTest("To verify the Login page");
         LoginPage loginPage= new LoginPage(driver);
@@ -46,9 +52,18 @@ public class LoginTest extends BaseTest {
 //        profilePage.updateProfiledetail("UmeshU","PandeyP");
 //        profilePage.btnSubmit();
 
+        Thread.sleep(2000);
         extentTest.info("Verify the Logout");
         LogoutPage logoutPage= new LogoutPage(driver);
         logoutPage.verifyLogoutPage();
         extentTest.log(Status.PASS, "Logout success");
+
+        extentTest= extentReports.createTest("Verify to open new Tab window");
+        ((JavascriptExecutor) driver).executeScript("window.open('https://qa.iotconnect.io/dashboard','_blank')");
+        ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+        driver.switchTo().window(tabs.get(1));
+        extentTest.info("new Tab is opened successfully");
+        //driver.switchTo().window(tabs.get(0));
+        //extentTest.info("back to original window");
     }
 }

@@ -7,6 +7,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.IOException;
+import java.util.Set;
+
 public class LogoutPage extends BasePage {
     public LogoutPage(WebDriver driver){super(driver);}
 
@@ -17,11 +20,11 @@ public class LogoutPage extends BasePage {
     //Locators Method
     public boolean verifyLogoutPage() throws InterruptedException {
         try{
-            WebElement menu= (new WebDriverWait(driver, 20))
+            WebElement menu= (new WebDriverWait(driver, 10))
                     .until(ExpectedConditions.presenceOfElementLocated(Menudropdown));
             menu.click();
 
-            WebElement btnsignout= (new WebDriverWait(driver,20))
+            WebElement btnsignout= (new WebDriverWait(driver,10))
                     .until(ExpectedConditions.presenceOfElementLocated(btnSignout));
             btnsignout.click();
 
@@ -31,6 +34,6 @@ public class LogoutPage extends BasePage {
             return false;
 
         }
-    }
 
+    }
 }
