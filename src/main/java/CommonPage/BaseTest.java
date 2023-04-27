@@ -60,12 +60,12 @@ public class BaseTest {
 
     @AfterClass
     public void Terminate(){
-        //driver.quit();
         System.out.println("Browser closed successfully.");
+        driver.quit();
     }
 
     @AfterMethod
-    public void getResult(ITestResult result) throws IOException{
+    public void getResult(ITestResult result) throws IOException , InterruptedException{
         if(result.getStatus() == ITestResult.FAILURE){
             extentTest.log(Status.FAIL, MarkupHelper.createLabel(result.getName() + " - Test Case Failed", ExtentColor.RED));
 //            extentTest.log(Status.FAIL, MarkupHelper.createLabel(result.getThrowable() + " Test Case Failed", ExtentColor.RED));
@@ -80,7 +80,8 @@ public class BaseTest {
             extentTest.log(Status.PASS, MarkupHelper.createLabel(result.getName()+" Test Case PASSED", ExtentColor.GREEN));
         }
         extentReports.flush();
-        //Desktop.getDesktop().browse(new File("Report.html").toURI());
+        Thread.sleep(1000);
+        Desktop.getDesktop().browse(new File("Report.html").toURI());
     }
 
     public static String getSreencapture(WebDriver driver, String screenShort) throws IOException {

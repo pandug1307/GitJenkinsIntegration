@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="42.404" tests="2" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="41.104" tests="2" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -24,14 +24,12 @@
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\umesh.pandey"/>
     <property name="user.language" value="en"/>
-    <property name="sun.stderr.encoding" value="cp437"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="java.version.date" value="2022-10-18"/>
     <property name="java.home" value="C:\Program Files\Java\jdk-11.0.17"/>
     <property name="file.separator" value="\"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="line.separator" value="&#10;"/>
-    <property name="sun.stdout.encoding" value="cp437"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
@@ -64,6 +62,6 @@
     <property name="library.jansi.path" value="C:\Program Files\Maven\apache-maven-3.8.6\lib\jansi-native"/>
     <property name="java.class.version" value="55.0"/>
   </properties>
-  <testcase name="VerifyLogin" classname="Login_Testcase.LoginTest" time="12.326"/>
-  <testcase name="verifyUserProfile" classname="UserProfile_Testcase.UserProfileTest" time="20.938"/>
+  <testcase name="VerifyLogin" classname="Login_Testcase.LoginTest" time="8.966"/>
+  <testcase name="verifyUserProfile" classname="UserProfile_Testcase.UserProfileTest" time="22.311"/>
 </testsuite>
