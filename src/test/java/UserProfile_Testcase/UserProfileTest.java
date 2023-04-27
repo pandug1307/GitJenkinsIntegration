@@ -44,5 +44,7 @@ public class UserProfileTest extends BaseTest {
         LogoutPage logoutPage= new LogoutPage(driver);
         logoutPage.verifyLogoutPage();
         extentTest.log(Status.PASS, "Logout success");
+
+        driver.quit();
     }
 }

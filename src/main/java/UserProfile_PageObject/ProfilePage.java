@@ -95,7 +95,7 @@ public class ProfilePage extends BasePage {
                     WebElement element1 = (new WebDriverWait(driver, 10))
                             .until(ExpectedConditions.visibilityOfElementLocated(companyName));
                     element1.click();
-                    Thread.sleep(20);
+                    Thread.sleep(1000);
 
                     WebElement phonetxtbxfield = new WebDriverWait(driver, 10)
                             .until(ExpectedConditions.presenceOfElementLocated(txtboxphone));

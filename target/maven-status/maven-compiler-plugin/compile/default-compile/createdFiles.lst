@@ -1,3 +1,4 @@
+Dashboard_PageObject\DashboardPage.class
 Logout_PageObject\LogoutPage.class
 CommonPage\BasePage.class
 CommonPage\BaseTest.class
