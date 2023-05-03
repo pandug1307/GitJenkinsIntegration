@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="1" name="Failed suite [Allied]" guice-stage="DEVELOPMENT" verbose="0">
+  <test thread-count="1" name="Allied(failed)" verbose="0">
+    <parameter name="localDriverpath" value="C:\Program Files\chromedriver.exe"/>
+    <parameter name="browsername" value="chrome"/>
+    <parameter name="url" value="http://168.61.189.83/#/login"/>
+    <classes>
+      <class name="Login_Testcase.LoginTest">
+        <methods>
+          <include name="VerifyLogin"/>
+          <include name="Setup"/>
+          <include name="Terminate"/>
+        </methods>
+      </class> <!-- Login_Testcase.LoginTest -->
+    </classes>
+  </test> <!-- Allied(failed) -->
+</suite> <!-- Failed suite [Allied] -->

@@ -1,18 +1,11 @@
 package Login_PageObject;
 
 import CommonPage.BasePage;
-import CommonPage.BaseTest;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.Status;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterTest;
 
 public class LoginPage extends BasePage {
     public LoginPage(WebDriver driver){super(driver);}
@@ -25,9 +18,12 @@ public class LoginPage extends BasePage {
     public By txtPasswrd= By.xpath("//input[@id='mat-input-1']");
     public By chckbxRememberMe= By.xpath("//span[@class='mat-checkbox-inner-container']");
     public By btnSignIn= By.xpath("//span[@class='mat-button-wrapper' and text()='Sign In']");
+    public By loginMsg= By.xpath("//div[contains(@role,'alertdialog')]");
+    //public By loggedinUser= By.xpath("//span[@class='hidden-xs']");
+    //public By pageLoader= By.xpath("//mat-spinner[@role='progressbar']");
 
-    //Locators Method
-    public boolean verifyLoginPage(By username, String email, By pass, String passwd) throws InterruptedException{
+    //Locators Methoda
+    public boolean verifyLoginPage(By username, String email, By pass, String passwd) {
         try{
 
             WebElement welcmeTxtmsg= (new WebDriverWait(driver, 10))
@@ -50,39 +46,22 @@ public class LoginPage extends BasePage {
                     .until(ExpectedConditions.presenceOfElementLocated(btnSignIn));
             btnSignin.click();
 
-//            WebElement btnSign= driver.findElement(By.xpath("//span[@class='mat-button-wrapper' and text()='Sign In']"));
-//            if (btnSign.click();){
-//                System.out.println();
-//            }
+            JavascriptExecutor jse = (JavascriptExecutor)driver;
+            WebElement successMsg= driver.findElement(loginMsg);
+            jse.executeScript("return arguments[0].text", successMsg);
+            String toastMsg= "Login Successful.";
 
-           return true;
-
-        }catch (Exception e){
-            return false;
-
-        }
-    }
-
-    public boolean getLoggedinmsg() throws InterruptedException{
-        try {
-
-            WebElement failureMsg= driver.findElement(By.xpath("//div[@role='alertdialog']"));
-            if (failureMsg.isDisplayed() == true) {
-                System.out.println(failureMsg.getText());
-
-        }else {
-                WebElement successMsg= driver.findElement(By.xpath("//div[@class='ng-tns-c8-2 ng-star-inserted ng-trigger ng-trigger-flyInOut ngx-toastr toast-success']"));
+            if (toastMsg.contains(successMsg.getText())) {
                 System.out.println(successMsg.getText());
+                return true;
 
+            }else {
+                System.out.println(successMsg.getText());
+                return false;
             }
 
-        return true;
-
-    }catch (Exception e){
-            return false;
-
+        }catch (NoSuchElementException e){
+            throw e;
         }
     }
-
-
 }

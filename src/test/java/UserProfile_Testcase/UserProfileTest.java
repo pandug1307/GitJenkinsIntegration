@@ -21,7 +21,7 @@ public class UserProfileTest extends BaseTest {
 
         LoginPage loginPage= new LoginPage(driver);
         loginPage.verifyLoginPage(loginPage.txtemailAddress, "umesh.pandey@softwebsolutions.com", loginPage.txtPasswrd, "Hello@#123");
-        loginPage.getLoggedinmsg();
+        //loginPage.getLoggedinmsg();
         Thread.sleep(8000);
 
         extentTest= extentReports.createTest("Verify the Dashboard page");
