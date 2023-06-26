@@ -2,9 +2,14 @@ http://168.61.189.83/#/login
 allied.packagingqa@mailinator.com
 Softweb#123
 
+2023-06-09T13:51:10.451Z
+
 Prod URL: https://prod-webapp-frontendui-cu.azurewebsites.net/#/
 hiten.saresa+02@gmail.com
 Softweb#123
+
+umesh.pandey@softwebsolutions.com
+Hello@#123
 
 organization_one@mailinator.com 
 Softweb@1234
@@ -30,22 +35,10 @@ Git Repository name - GitJenkinsIntegration
 https://www.swtestacademy.com/extent-reports-in-selenium-with-testng/
 https://www.browserstack.com/guide/extent-reports-in-selenium
 
+Git Lab URL: https://gitlab.com/umesh1985/cypress-allied
+Git repo - https://gitlab.com/umesh1985/cypress-allied.git
+email - pandug1307@gmail.com
+pass- polytechnic123
 
-Bugs list:
-1. In Machine dashborad rom RealTime Data page , sometime "Back" button not clickable  = done - QA done
 
-2. Sorting fail by Facility Name & Film Reference Number in Recipe : (https://prnt.sc/ECcOfLCAkCHr) = done - as dev along with Hiten sir and we need to ignore. 
-
-3. spelling mistake in success msg while update password - done - QA fail - after entering password details, Save button not clickable
-
-4. Alert should be displayed with red color when user select any tab like Rules and no records are available. (done - spacing seems proper) - QA Fail - Alert do not visible for entire tabs
-
-5. Space around error msg - done - QA done
-
-6. After sorting from header, existing record is getting hide (Film Module) - done - QA done
-
-7. phone number is not getting saved  - done - QA done
-
-8. Validation do not comes for email address when enter in invalid format In Add User - done - QA done
-
-9. the pages when horizontal scrolling enable and user scrolling that - done
+glpat-ThXZMMKXRQBC89pNx_rR

@@ -22,8 +22,45 @@ public class LoginPage extends BasePage {
     //public By loggedinUser= By.xpath("//span[@class='hidden-xs']");
     //public By pageLoader= By.xpath("//mat-spinner[@role='progressbar']");
 
-    //Locators Methoda
-    public boolean verifyLoginPage(By username, String email, By pass, String passwd) {
+    //Methods
+    public boolean verifyInvalidLogin(By username, String email, By pass, String passwd){
+        try{
+
+            WebElement welcmeTxtmsg= (new WebDriverWait(driver, 10))
+                    .until(ExpectedConditions.presenceOfElementLocated(Msg));
+            System.out.println(welcmeTxtmsg.getText());
+
+            WebElement emailaddress= (new WebDriverWait(driver,10))
+                    .until(ExpectedConditions.presenceOfElementLocated(username));
+            emailaddress.sendKeys(email);
+
+            WebElement Passwd= (new WebDriverWait(driver,10))
+                    .until(ExpectedConditions.presenceOfElementLocated(pass));
+            Passwd.sendKeys(passwd);
+
+            WebElement btnSignin= (new WebDriverWait(driver, 10))
+                    .until(ExpectedConditions.presenceOfElementLocated(btnSignIn));
+            btnSignin.click();
+
+            JavascriptExecutor jse= (JavascriptExecutor)driver;
+            WebElement failMsg= driver.findElement(By.xpath("//div[contains(@id, 'toast-container')]"));
+            jse.executeScript("return arguments[0].text", failMsg);
+            String toastMsg= "Email or Password is not valid";
+
+            if (toastMsg.contains(failMsg.getText())){
+                System.out.println(failMsg.getText());
+                return true;
+            }else {
+                System.out.println(failMsg.getText());
+                return false;
+            }
+
+        }catch (NoSuchElementException e){
+            throw e;
+
+        }
+    }
+    public boolean verifyValidLogin(By username, String email, By pass, String passwd) {
         try{
 
             WebElement welcmeTxtmsg= (new WebDriverWait(driver, 10))

@@ -18,7 +18,7 @@ public class LogoutPage extends BasePage {
     public By btnSignout= By.xpath("//a[@href='javascript:void(0)' and text()=' Sign Out']");
 
     //Locators Method
-    public boolean verifyLogoutPage() throws InterruptedException {
+    public boolean verifyLogoutPage() {
         try{
             WebElement menu= (new WebDriverWait(driver, 10))
                     .until(ExpectedConditions.presenceOfElementLocated(Menudropdown));
@@ -27,6 +27,7 @@ public class LogoutPage extends BasePage {
             WebElement btnsignout= (new WebDriverWait(driver,10))
                     .until(ExpectedConditions.presenceOfElementLocated(btnSignout));
             btnsignout.click();
+            System.out.println("Logout success");
 
             return true;
 
